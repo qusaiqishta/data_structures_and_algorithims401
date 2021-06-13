@@ -85,6 +85,7 @@ class LinkedList:
 
     
 
+            return 'It is an empty list !!!'     
 
 
 if __name__ == '__main__':

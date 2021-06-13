@@ -1,9 +1,8 @@
 from linked_list.linked_list import LinkedList 
 
 
-
-
 def test_insert_1():
+    # Can successfully instantiate an empty linked list
     ll1 = LinkedList()
     ll1.insert(1)
     actual = ll1.__str__()
@@ -46,6 +45,7 @@ def test_includes_False():
     actual = ll.includes(4)
     expected=False
     assert actual==expected      
+
 
 
 def test_append_1():
@@ -95,6 +95,4 @@ def insert_after():
     list.append(5) 
     list.insertAfter(3,10)
     assert list.head.next.next.value==10           
-
-
 
