@@ -1,3 +1,7 @@
+
+
+
+
 class Node:
     def __init__(self,value):
         self.value = value
@@ -27,6 +31,44 @@ class LinkedList:
                 current=current.next # means continue searching 
         return False 
 
+   
+
+    def append(self,value):
+        node=Node(value)
+        if self.head==None:
+            self.head=node
+        else:
+            current=self.head
+            while current.next!=None:
+                current=current.next
+            current.next=node
+
+    def insertBefor(self,value,newVal):
+        if self.includes(value) == True:
+            node= Node(newVal)
+            if self.head.value == value:
+                return self.insert(newVal)
+            current=self.head
+            while  current.next.value!= value:
+                current = current.next
+            node.next = current.next
+            current.next=node
+
+
+    def insertAfter(self,value,newVal):
+        if (self.includes(value) == False):
+            print('Value does not exist.')
+        else:
+            node = Node(newVal)
+            current = self.head
+            while(current.value != value):
+                current = current.next
+            node.next = current.next
+            current.next = node
+
+
+
+      
     def __str__(self):
          if self.head!=None:
              list=''
@@ -37,6 +79,11 @@ class LinkedList:
              list+='NULL'
              return list
          else:
+            return 'It is an empty list !!!'         
+
+    
+
+
             return 'It is an empty list !!!'     
 
 
@@ -45,8 +92,12 @@ if __name__ == '__main__':
     array = LinkedList()
     array.insert(0)
     array.insert(1)
+
+    array.append(5)
+    array.insertAfter(1,3)
+    array.insertBefor(5,10)
+
     print(array)
     print(array.includes(0),array.includes(8)) 
     print(array.head.value)
-
 
