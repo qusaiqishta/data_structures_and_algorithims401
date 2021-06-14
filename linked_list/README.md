@@ -5,12 +5,17 @@ Create a Node class that has properties for the value stored in the Node, and a 
 # Efficiency
 
 
-insert : time : O(1) space : O(1)
-append : time : O(n) space : O(1)
-includes : time : O(n) space : O(1)
-__ str __ time : O(n) space : O(n)
-insertBefore : time : O(n) space : O(1)
-insertAfter : time : O(n) space : O(1)
+- insert : time : O(1) space : O(1)
+
+- append : time : O(n) space : O(1)
+
+- includes : time : O(n) space : O(1)
+
+- __ str __ time : O(n) space : O(n)
+
+- insertBefore : time : O(n) space : O(1)
+
+- insertAfter : time : O(n) space : O(1)
 
 
 # Whiteboard process
@@ -29,3 +34,7 @@ insertAfter : time : O(n) space : O(1)
 ## inserBefore
 
 ![](/linked_list/images/insertBefore.png)
+
+
+## kth_from_end
+![](/linked_list/images/kth_from_end.png)

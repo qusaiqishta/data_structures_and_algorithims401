@@ -1,7 +1,7 @@
 
  
-
 from linked_list.linked_list import LinkedList
+import pytest
 
 
 
@@ -99,5 +99,37 @@ def insert_after():
     list.append(3)
     list.append(5) 
     list.insertAfter(3,10)
-    assert list.head.next.next.value==10           
+    assert list.head.next.next.value==10    
 
+def kth_from_end_k_greater_than_length():
+    assert input_list.kth_from_end(10)=='index out of range'
+
+def kth_from_end_k_less_than_zero():
+    assert input_list.kth_from_end(-10)=='You entered a non valid value , enter positive integer number'        
+
+
+def kth_from_end_k_empty_list():
+    assert input_list_empty.kth_from_end(0)=='List is empty'
+
+
+
+def kth_from_end_k():
+    assert input_list_empty.kth_from_end(0)==1
+
+
+def kth_from_end_k():
+    assert input_list_empty.kth_from_end(4)==5
+
+@pytest.fixture
+def input_list():
+    list=LinkedList()
+    list.insert(1)
+    list.insert(2)
+    list.insert(3)
+    list.insert(4)
+    list.insert(5)
+    return list
+
+def input_list_empty():
+    list=LinkedList()
+    return list    
