@@ -57,7 +57,7 @@ class LinkedList:
 
     def insertAfter(self,value,newVal):
         if (self.includes(value) == False):
-            print('Value does not exist.')
+            return('Value does not exist.')
         else:
             node = Node(newVal)
             current = self.head
