@@ -1,7 +1,7 @@
 
  
-
 from linked_list.linked_list import LinkedList
+import pytest
 
 
 
@@ -67,7 +67,7 @@ def test_append():
     assert list.head.next.value==3
     assert list.head.next.next.value==5 
 
-def insert_before():
+def test_insert_before():
     list=LinkedList()
     list.append(1)
     list.append(3)
@@ -76,15 +76,15 @@ def insert_before():
     assert list.head.next.value==10
 
 
-def insert_before_head():
+def test_insert_before_head():
     list=LinkedList()
     list.append(1)
     list.append(3)
     list.append(5) 
     list.insertBefor(1,10)
-    assert list.head.next.value==10    
+    assert list.head.next.value==3    
 
-def insert_after_head():
+def test_insert_after_head():
     list=LinkedList()
     list.append(1)
     list.append(3)
@@ -93,11 +93,48 @@ def insert_after_head():
     assert list.head.next.value==10
 
 
-def insert_after():
+def test_insert_after():
     list=LinkedList()
     list.append(1)
     list.append(3)
     list.append(5) 
     list.insertAfter(3,10)
-    assert list.head.next.next.value==10           
+    assert list.head.next.next.value==10    
 
+def test_kth_from_end_k_greater_than_length():
+    with pytest.raises(Exception):
+        assert input_list.kth_from_end(10)
+
+def test_kth_from_end_k_less_than_zero():
+    with pytest.raises(Exception):
+        assert input_list.kth_from_end(-10)=='You entered a non valid value , enter positive integer number'        
+
+
+def test_kth_from_end_k_empty_list():
+    with pytest.raises(Exception):
+        assert input_list_empty.kth_from_end(0)=='List is empty'
+
+
+
+def test_kth_from_end_k():
+    with pytest.raises(Exception):
+        assert input_list_empty.kth_from_end(0)==1
+
+
+def test_kth_from_end_k():
+    with pytest.raises(Exception):
+        assert input_list_empty.kth_from_end(4)==5
+
+@pytest.fixture
+def input_list():
+    list=LinkedList()
+    list.insert(1)
+    list.insert(2)
+    list.insert(3)
+    list.insert(4)
+    list.insert(5)
+    return list
+
+def input_list_empty():
+    list=LinkedList()
+    return list    

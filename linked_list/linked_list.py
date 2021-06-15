@@ -64,6 +64,39 @@ class LinkedList:
             current.next = node
 
 
+    def list_length(self):
+        current=self.head
+        length=0
+        while (current):
+            length+=1
+            current=current.next
+        return length
+
+
+    def kth_from_end(self,k):
+        list_length=self.list_length()
+        if type(k)!=int or k<0:
+            raise TypeError('You entered a non valid value , enter positive integer number')
+        elif k>list_length-1:
+            raise IndexError('index out of range')
+        elif list_length==0:
+            raise Exception('List is empty')    
+
+        else:
+            result=[]
+            current=self.head
+
+        while (current):
+            result+=[current.value]
+            current=current.next
+            if current==None:
+                break
+
+        return result[::-1][k]            
+
+                        
+
+
 
       
     def __str__(self):
@@ -81,7 +114,7 @@ class LinkedList:
     
 
 
-            return 'It is an empty list !!!'     
+                 
 
 
 if __name__ == '__main__':
@@ -95,6 +128,13 @@ if __name__ == '__main__':
     array.insertBefor(5,10)
 
     print(array)
-    print(array.includes(0),array.includes(8)) 
-    print(array.head.value)
+    # print(array.includes(0),array.includes(8)) 
+    # print(array.head.value)
+    print(array.kth_from_end(4))
+    # print(array.kth_from_end(-1))
+    # print(array.kth_from_end('q'))
+    # print(array.kth_from_end(10))
+    
+    print(array)
+
 
