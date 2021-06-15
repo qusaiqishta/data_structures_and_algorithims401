@@ -50,25 +50,40 @@ Create a Node class that has properties for the value stored in the Node, and a 
 ![](/linked_list/images/kth_from_end.png)
 
 
+## ii-zip
+![](/linked_list/images/zip.png)
+
+
 # API
 
 insert
+
 Add a new node to start of a list
 
 includes
+
 check if a specific node exist in a list or not
 
 append
+
 Takes any value as an argument and adds a new node with that value to the end of the list.
 
 insertBefore
+
 Add a new node with the given newValue immediately before the first value node
 
 insertAfter
+
 Add a new node with the given newValue immediately after the first value node
 
 kthFromEnd
+
 Takes a number, k, as a parameter. Return the node’s value that is k from the end of the linked list.
+
+zipLists
+
+akes two linked lists as arguments. Zip the two linked lists together into one so that the nodes alternate between the two lists and return a reference to the head of the zipped list
+
 
 str
 Takes in no arguments and returns a string representing all the values in the Linked List, formatted as:

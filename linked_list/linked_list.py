@@ -92,7 +92,28 @@ class LinkedList:
             if current==None:
                 break
 
-        return result[::-1][k]            
+        return result[::-1][k]  
+
+
+
+def zipLists(list_one,list_two):
+    if (list_one.head!=None):
+        current_one=list_one.head
+        current_two=list_two.head
+
+    while current_one.next:
+
+        list_one.insertAfter(current_one.value,current_two.value)
+        current_one=current_one.next.next
+        current_two=current_two.next
+        if current_one==None:
+            break
+
+    while current_two:
+        list_one.append(current_two.value)
+        current_two=current_two.next
+
+
 
                         
 
@@ -119,22 +140,22 @@ class LinkedList:
 
 if __name__ == '__main__':
 
+
+    array2 = LinkedList()
     array = LinkedList()
-    array.insert(0)
-    array.insert(1)
+    array.append(1)
+    array.append(2)
 
-    array.append(5)
-    array.insertAfter(1,3)
-    array.insertBefor(5,10)
+    array.append(3)
+    array2.append(4)
+    array2.append(5)
 
-    print(array)
-    # print(array.includes(0),array.includes(8)) 
-    # print(array.head.value)
-    print(array.kth_from_end(4))
-    # print(array.kth_from_end(-1))
-    # print(array.kth_from_end('q'))
-    # print(array.kth_from_end(10))
     
+
+    array2.append(6)
+    
+
+    zipLists(array,array2)
     print(array)
 
-
+    print(array2)
