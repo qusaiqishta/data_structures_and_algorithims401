@@ -6,7 +6,7 @@ from linked_list.linked_list import LinkedList ,zipLists
 import pytest
 
 
-@pytest.mark.skip
+# @pytest.mark.skip
 def test_insert_1():
     ll1 = LinkedList()
     ll1.insert(1)
@@ -133,12 +133,12 @@ def test_zip_1st_empty():
     list2.append(1)
     list2.append(2)
     list2.append(3)
-    actual=zipLists(list2,list1)
-    expected="{1} ->{2} ->{3} ->NULL"
-    assert actual==expected
+    
+    
+    assert str(zipLists(list1,list2))=="{1} ->{2} ->{3} ->NULL"
 
 
-def test_zip_1st_same_length():
+def test_zip_same_length():
     list1 = LinkedList()
     list2 = LinkedList()
     list1.append(1)
@@ -147,12 +147,13 @@ def test_zip_1st_same_length():
     list2.append(4)
     list2.append(5)
     list2.append(6)
-    actual=zipLists(list2,list1)
-    expected="{1} ->{4} ->{2} ->{5} ->{3} ->{6} ->NULL"
-    assert actual==expected  
+    
+    
+    
+    assert str(zipLists(list1,list2))=='{1} ->{4} ->{2} ->{5} ->{3} ->{6} ->NULL' 
 
 
-def test_zip_not_same_length():
+def test_zip_two_has_bigger_length():
     list1 = LinkedList()
     list2 = LinkedList()
     list1.append(1)
@@ -161,12 +162,12 @@ def test_zip_not_same_length():
     list2.append(4)
     list2.append(5)
     list2.append(6)
-    actual=zipLists(list2,list1)
-    expected="{1} ->{4} ->{2} ->{5} ->{6} ->NULL"
-    assert actual==expected    
+    
+    
+    assert str(zipLists(list1,list2))=="{1} ->{4} ->{2} ->{5} ->{6} ->NULL"   
 
 
-def test_zip_1st_same_length():
+def test_zip_one_has_bigger_length():
     list1 = LinkedList()
     list2 = LinkedList()
     list1.append(1)
@@ -175,10 +176,7 @@ def test_zip_1st_same_length():
     list2.append(4)
     list2.append(5)
     
-    actual=zipLists(list2,list1)
-    expected="{1} ->{4} ->{2} ->{5} ->{3} ->NULL"
-    assert actual==expected              
-      
+    assert str(zipLists(list1,list2))=="{1} ->{4} ->{2} ->{5} ->{3} ->NULL"
 
 @pytest.fixture
 def input_list():
